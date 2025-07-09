@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    font-family: 'Ubuntu', sans-serif;
+}
+.title{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    text-align: center;
+    width: 90vw;
+    max-width: 500px;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 0 10px;
+    word-break: break-word;
+}
+.calculator{
+    width: 340px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) ;
+    background: #011014;
+    overflow: hidden;
+}
+
+.display{
+    background-color:#2c068a ;
+    color: #fff;
+    padding: 20px;
+    font-size: 28px ;
+    text-align: right;
+    border-bottom: 1px solid #fff5f5b2;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 20px;
+}
+
+button{
+    background-color:  #0b1b2db2;
+    border: none;
+    border-radius: 80%;
+    font-size: 25px;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+}
+button:active{
+    transform: scale(0.95);
+    background-color: #a7a7ab;
+}
+button.zero {
+    grid-column: span 2;
+    border-radius: 80px;
+    text-align: left;
+    padding-left: 35px;
+}
+button[data-value="/"],
+button[data-value="*"],
+button[data-value="-"],
+button[data-value="+"],
+button[data-value="="]{
+    background-color:#0c053e;
+}
+
+button[data-value="AC"],
+button[data-value="+/-"],
+button[data-value="%"]{
+    background-color: #1e1274;
+}
+    
