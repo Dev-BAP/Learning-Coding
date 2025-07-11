@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background: url(asset/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+nav{
+    background-color:#051024c4 ;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+nav li{
+    height: 70px;
+    
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(221, 225, 230);
+}
+nav a {
+    transition: background-color 0.3s, color 0.3s;
+}
+nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 12px;
+    height: 2px;
+    background: #0a53fd;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+nav li:first-child{
+    margin-right: auto;
+    font-size: 30px;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #05183bbc;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    box-shadow:-10px 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display: none;
+}
+@media(max-width:768px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+@media(max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+}
