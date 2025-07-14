@@ -11,3 +11,5 @@ Journey Learning Programming and Creating Programs!
 • Day 4 Navbar With Login And Sign up Form.
 
 • Day 5 Responsive SideNav With Other Features.
+
+• Day 6 Login In and Sign Up With Social Icons.
