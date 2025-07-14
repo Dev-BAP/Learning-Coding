@@ -1,28 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-:root{
-    --accent-color: #2b2c71;
-    --base-color: #ffffff;
-    --text-color: #222222;
-    --input-color: #f3f4f6;
-}*{
+:root {
+  --accent-color: #2b2c71;
+  --base-color: #ffffff;
+  --text-color: #222222;
+  --input-color: #f3f4f6;
+}
+* {
   margin: 0;
   padding: 0;
 }
-html{
+html {
   font-family: Ubuntu, Segoe UI, sans-serif;
   font-size: 12pt;
   color: var(--text-color);
   text-align: center;
 }
-body{
+body {
   min-height: 100vh;
   background-image: url(asset/background.png);
   background-size: cover;
   background-position: right;
   overflow: hidden;
 }
-.wrapper{
+.wrapper {
   box-sizing: border-box;
   background-color: var(--base-color);
   height: 100vh;
@@ -35,12 +36,12 @@ body{
   align-items: center;
   justify-content: center;
 }
-h1{
+h1 {
   font-size: 3rem;
   font-weight: 900;
   text-transform: uppercase;
 }
-form{
+form {
   width: min(400px, 100%);
   margin-top: 20px;
   margin-bottom: 50px;
@@ -49,12 +50,12 @@ form{
   align-items: center;
   gap: 10px;
 }
-form > div{
+form > div {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-form label{
+form label {
   flex-shrink: 0;
   height: 50px;
   width: 50px;
@@ -68,7 +69,7 @@ form label{
   font-size: 1.5rem;
   font-weight: 500;
 }
-form input{
+form input {
   box-sizing: border-box;
   flex-grow: 1;
   min-width: 0;
@@ -81,24 +82,24 @@ form input{
   background-color: var(--input-color);
   transition: 150ms ease;
 }
-form input:hover{
+form input:hover {
   border-color: var(--accent-color);
 }
-form input:focus{
+form input:focus {
   outline: none;
   border-color: var(--text-color);
 }
-div:has(input:focus) > label{
+div:has(input:focus) > label {
   background-color: var(--text-color);
 }
-form input::placeholder{
+form input::placeholder {
   color: var(--text-color);
 }
-form button{
+form button {
   margin-top: 10px;
   border: none;
   border-radius: 1000px;
-  padding: .85em 4em;
+  padding: 0.85em 4em;
   background-color: var(--accent-color);
   color: var(--base-color);
   font: inherit;
@@ -107,32 +108,61 @@ form button{
   cursor: pointer;
   transition: 150ms ease;
 }
-form button:hover{
+form button:hover {
   background-color: var(--text-color);
 }
-form button:focus{
+form button:focus {
   outline: none;
   background-color: var(--text-color);
 }
-a{
+a {
   text-decoration: none;
   color: var(--accent-color);
 }
-a:hover{
+a:hover {
   text-decoration: underline;
 }
-@media(max-width: 1100px){
-  .wrapper{
+@media (max-width: 1100px) {
+  .wrapper {
     width: min(600px, 100%);
     border-radius: 0;
   }
 }
-form div.incorrect label{
+form div.incorrect label {
   background-color: #f06272;
 }
-form div.incorrect input{
+form div.incorrect input {
   border-color: #f06272;
 }
-#error-message{
-  color:#f06272;
+#error-message {
+  color: #f06272;
+}
+
+.social-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.social-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  box-shadow: 0 2px 8px rgba(43, 44, 113, 0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #e0e0e0;
+}
+.social-container a:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(43, 44, 113, 0.08);
+  transform: translateY(-2px) scale(1.08);
+}
+.social-container svg {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
