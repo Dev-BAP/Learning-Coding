@@ -57,12 +57,15 @@
                 />
               </svg>
             </label>
-            <input
-              type="password"
-              name="password"
-              id="password-input"
-              placeholder="Password"
-            />
+            <div class="password-container">
+              <input
+                type="password"
+                name="password"
+                id="password-input"
+                placeholder="Password"
+              />
+              <img src="asset/icons/eye-close.png" id="toggle-password-visibility" alt="Toggle Password Visibility">
+            </div>
           </div>
           <div>
             <label for="repeat-password-input">
@@ -77,12 +80,15 @@
                 />
               </svg>
             </label>
-            <input
-              type="password"
-              name="repeat-password"
-              id="repeat-password-input"
-              placeholder="Repeat Password"
-            />
+            <div class="password-container">
+              <input
+                type="password"
+                name="repeat-password"
+                id="repeat-password-input"
+                placeholder="Repeat Password"
+              />
+              <img src="asset/icons/eye-close.png" id="toggle-repeat-password-visibility" alt="Toggle Repeat Password Visibility">
+            </div>
           </div>
           <button type="submit">Signup</button>
         </form>
