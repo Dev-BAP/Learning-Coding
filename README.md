@@ -15,3 +15,5 @@ Journey Learning Programming and Creating Programs!
 • Day 6 Login In and Sign Up With Social Icons, Password Visibility.
 
 • Day 7 Landing page for find link.
+
+• Day 8 Pixel Image.
