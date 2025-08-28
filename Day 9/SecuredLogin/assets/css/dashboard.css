@@ -1,0 +1,665 @@
+:root {
+  --accent-color: #0c057b;
+  --border-color: #171717;
+  --base-color: #ffffff;
+  --text-color: #0a0a0a;
+  --input-color: #e1e2e4;
+  --hover-color: #030657ca;
+  --lively-color: #0c057b;
+  --verify-color: #28a745;
+  --verify-hover-color: #218838;
+}
+
+body {
+  font-family: Ubuntu, Segoe UI, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    202deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(4, 4, 181, 1) 49%,
+    rgba(4, 59, 71, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100vh;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+/* Lock background scroll when modal is open */
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, var(--accent-color), var(--hover-color));
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.dashboard-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 25px auto 0;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.logout-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-header {
+    padding: 25px 20px;
+    margin-bottom: 25px;
+  }
+
+  .dashboard-content {
+    padding: 25px 20px;
+  }
+
+  .logout-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    margin-top: 15px;
+    max-width: 180px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .dashboard-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .dashboard-header {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-header p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .dashboard-content {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .dashboard-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .dashboard-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .logout-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+    max-width: 160px;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 360px) {
+  .dashboard-container {
+    padding: 8px;
+  }
+
+  .dashboard-header {
+    padding: 18px 12px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+
+  .dashboard-content {
+    padding: 18px 12px;
+  }
+
+  .dashboard-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-content p {
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    padding: 10px 12px;
+    font-size: 13px;
+    max-width: 140px;
+  }
+}
+
+/* Math Practice Section Styles */
+.math-practice-section {
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  border: 2px solid #dee2e6;
+  position: relative;
+  z-index: 5;
+}
+
+.math-practice-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.math-practice-section p {
+  color: #6c757d;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.math-practice-info {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #dee2e6;
+}
+
+.math-practice-info h4 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.math-practice-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.math-practice-info li {
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent-color);
+  font-weight: 500;
+  color: #495057;
+}
+
+.practice-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(12, 5, 123, 0.3);
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.practice-btn:hover {
+  background: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 5, 123, 0.4);
+}
+
+.practice-btn:active {
+  transform: translateY(0);
+}
+
+/* Modal Styles for Math Practice */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--accent-color), var(--hover-color));
+  color: white;
+  padding: 20px 25px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.close:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.close::after {
+  content: "Click to close";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.close:hover::after {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.modal-body p {
+  margin-bottom: 20px;
+  color: #6c757d;
+  text-align: center;
+  font-size: 16px;
+}
+
+.math-question {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px solid #dee2e6;
+}
+
+.math-question span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.math-options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Horizontal scroll just for dashboard practice modal */
+#practice-math-options {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin: 20px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+#practice-math-options .math-option {
+  flex: 0 0 auto;
+  min-width: 72px;
+  padding: 14px 12px;
+  scroll-snap-align: center;
+}
+
+/* Subtle horizontal scrollbar styling for better UX */
+#practice-math-options::-webkit-scrollbar {
+  height: 8px;
+}
+
+#practice-math-options::-webkit-scrollbar-track {
+  background: #e9ecef;
+  border-radius: 8px;
+}
+
+#practice-math-options::-webkit-scrollbar-thumb {
+  background: #c5c9d0;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  #practice-math-options .math-option {
+    min-width: 64px;
+    padding: 12px 10px;
+  }
+}
+
+.math-option {
+  background: white;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.math-option:hover {
+  border-color: var(--accent-color);
+  background: #f0f4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(12, 5, 123, 0.2);
+}
+
+.math-option.selected {
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 5, 123, 0.4);
+}
+
+.math-option.correct {
+  border-color: #28a745;
+  background: #28a745;
+  color: white;
+}
+
+.math-option.incorrect {
+  border-color: #dc3545;
+  background: #dc3545;
+  color: white;
+}
+
+.practice-stats {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background: #e9ecef;
+  border-radius: 8px;
+}
+
+.practice-stats p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.modal-buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 120px;
+}
+
+.modal-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+#practice-verify {
+  background: var(--verify-color);
+  color: white;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+#practice-verify:hover:not(:disabled) {
+  background: var(--verify-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+#practice-next {
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 2px 8px rgba(12, 5, 123, 0.3);
+}
+
+#practice-next:hover:not(:disabled) {
+  background: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 5, 123, 0.4);
+}
+
+#practice-reset {
+  background: #6c757d;
+  color: white;
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+#practice-reset:hover:not(:disabled) {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+/* Responsive Design for Math Practice */
+@media (max-width: 768px) {
+  .math-practice-section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .math-practice-info ul {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-btn {
+    max-width: 250px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10px;
+  }
+
+  .math-options-container {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 8px;
+  }
+
+  .math-option {
+    padding: 12px 8px;
+    font-size: 14px;
+    min-height: 45px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .math-practice-section {
+    padding: 15px;
+  }
+
+  .math-practice-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .practice-btn {
+    max-width: 200px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .math-question span {
+    font-size: 1.5rem;
+  }
+
+  .math-options-container {
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: 6px;
+  }
+
+  .math-option {
+    padding: 10px 6px;
+    font-size: 13px;
+    min-height: 40px;
+  }
+}

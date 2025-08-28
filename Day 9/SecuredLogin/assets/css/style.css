@@ -1,0 +1,1260 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --accent-color: #070069;
+  --border-color: #000000;
+  --base-color: #ffffff;
+  --text-color: #0a0a0a;
+  --input-color: #e1e2e4;
+  --hover-color: #030657ca;
+  --lively-color: #0d057b;
+  --verify-color: #28a745;
+  --verify-hover-color: #218838;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Ubuntu, Segoe UI, sans-serif;
+  font-size: 12pt;
+  color: var(--text-color);
+  text-align: center;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    140deg,
+    rgba(2, 0, 36, 1) 10%,
+    rgb(2, 2, 145) 50%,
+    rgb(1, 30, 37) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  backdrop-filter: blur(10px);
+}
+
+html,
+body {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.container-flex {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.wrapper {
+  box-sizing: border-box;
+  background-color: var(--base-color);
+  height: 100vh;
+  width: max(40%, 320px);
+  padding: 10px;
+  border-radius: 15px 15px 15px 15px;
+  border: solid 3px var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.password-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.password-container input {
+  width: 100%;
+}
+.password-container img {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+.password-container img:hover {
+  opacity: 1;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+form {
+  width: min(370px, 100%);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+form > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+form label {
+  flex-shrink: 0;
+  height: 50px;
+  width: 50px;
+  background-color: var(--accent-color);
+  fill: var(--base-color);
+  color: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+form input {
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+form input:hover {
+  border-color: var(--accent-color);
+}
+form input:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+form > div:has(input[type="email"]:focus) > label,
+form > div:has(input[type="password"]:focus) > label,
+form > div:has(input[type="text"]:focus) > label {
+  background-color: var(--text-color);
+}
+form input::placeholder {
+  color: var(--text-color);
+}
+form button {
+  margin-top: 10px;
+  border: none;
+  border-radius: 1000px;
+  padding: 0.85em 4em;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+form button:hover {
+  background-color: var(--hover-color);
+}
+form button:focus {
+  outline: none;
+  background-color: var(--hover-color);
+}
+form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1100px) {
+  .wrapper {
+    width: min(600px, 100%);
+    border-radius: 0;
+  }
+  form {
+    width: 380px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  html {
+    font-size: 11pt;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: none;
+  }
+
+  .container-flex {
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    overflow: hidden;
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 20px 15px;
+    overflow-y: auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    gap: 8px;
+  }
+
+  form label {
+    height: 45px;
+    width: 45px;
+    font-size: 1.3rem;
+  }
+
+  form input {
+    height: 45px;
+    padding: 0.8em;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  form button {
+    padding: 0.8em 3em;
+    font-size: 14px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .password-container img {
+    width: 18px;
+    height: 18px;
+    right: 12px;
+  }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  html {
+    font-size: 10pt;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .container-flex {
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    overflow: hidden;
+  }
+
+  .wrapper {
+    padding: 15px 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  form {
+    max-width: 320px;
+    gap: 6px;
+  }
+
+  form label {
+    height: 40px;
+    width: 40px;
+    font-size: 1.2rem;
+  }
+
+  form input {
+    height: 40px;
+    padding: 0.7em;
+    font-size: 16px;
+  }
+
+  form button {
+    padding: 0.7em 2.5em;
+    font-size: 13px;
+    max-width: 250px;
+  }
+  .password-container img {
+    width: 16px;
+    height: 16px;
+    right: 10px;
+  }
+}
+
+/* Extra Small Mobile Responsive */
+@media (max-width: 360px) {
+  html,
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .container-flex {
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    overflow: hidden;
+  }
+
+  .wrapper {
+    padding: 10px 8px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    max-width: 280px;
+  }
+
+  form label {
+    height: 38px;
+    width: 38px;
+    font-size: 1.1rem;
+  }
+
+  form input {
+    height: 38px;
+    padding: 0.6em;
+  }
+
+  form button {
+    padding: 0.6em 2em;
+    font-size: 12px;
+    max-width: 220px;
+  }
+  .password-container img {
+    width: 16px;
+    height: 16px;
+    right: 10px;
+  }
+}
+
+form div.incorrect label {
+  background-color: #ed2c42;
+}
+form div.incorrect input {
+  border-color: #ed2c42;
+}
+#error-message {
+  color: #ed2c42;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#error-message.error {
+  color: #ed2c42;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ed2c42;
+  transition: opacity 0.3s ease;
+}
+
+#success-message {
+  color: #28a745;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#success-message.success {
+  color: #28a745;
+  background-color: #e6ffe6;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #28a745;
+  transition: opacity 0.3s ease;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  width: auto;
+  justify-content: flex-start;
+  padding-left: 0;
+  margin: 15px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  margin: 0;
+  accent-color: #04b530;
+  flex-shrink: 0;
+}
+
+.checkbox-container label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-left: 8px;
+  background: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  padding: 0;
+  white-space: normal;
+  text-align: left;
+  word-wrap: break-word;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Mobile responsive checkbox */
+@media (max-width: 480px) {
+  .checkbox-container {
+    margin: 12px 0;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox-container label {
+    font-size: 13px;
+    margin-left: 6px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-content {
+  background-color: var(--base-color);
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: modalSlideIn 0.15s ease-out;
+  position: relative;
+  overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--accent-color), var(--hover-color));
+  color: var(--base-color);
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.close {
+  color: var(--base-color);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  user-select: none;
+}
+
+.close:hover {
+  color: #ff0000;
+}
+
+.modal-body {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.modal-body p {
+  margin-bottom: 25px;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.math-question {
+  background: linear-gradient(135deg, #e3e7ea, #e9ecef);
+  padding: 30px;
+  border-radius: 15px;
+  margin: 25px 0;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 8px 25px rgba(12, 5, 123, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.math-question span {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.math-options-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: flex-start;
+  margin: 20px 0;
+  max-height: 80px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) #f0f0f0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.math-options-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.math-options-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.math-options-container::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+.math-options-container::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}
+
+.math-option {
+  background: white;
+  border: 2px solid var(--input-color);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.1s ease;
+  min-width: 50px;
+  flex-shrink: 0;
+  text-align: center;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.math-option:hover {
+  border-color: var(--accent-color);
+}
+
+.math-option.selected {
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+  color: white;
+}
+
+.math-option.correct {
+  border-color: #28a745;
+  background: #28a745;
+  color: white;
+}
+
+.math-option.incorrect {
+  border-color: #ed2c42;
+  background: #ed2c42;
+  color: white;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.math-input {
+  margin: 30px 0;
+}
+
+.math-input input {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 20px;
+  border: 3px solid var(--input-color);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.math-input input:focus,
+.math-input input:hover {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(12, 5, 123, 0.1);
+}
+
+.math-input input.correct {
+  border-color: #28a745;
+  background-color: #e6ffe6;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.math-input input.incorrect {
+  border-color: #ed2c42;
+  background-color: #ffe6e6;
+  box-shadow: 0 0 0 3px rgba(237, 44, 66, 0.1);
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.modal-buttons button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 115px;
+}
+
+.modal-buttons button:first-child {
+  background: linear-gradient(
+    120deg,
+    var(--verify-color),
+    var(--verify-hover-color)
+  );
+  color: var(--base-color);
+  box-shadow: 0 2px 10px rgba(40, 43, 46, 0.3);
+}
+
+.modal-buttons button:first-child:hover {
+  background: linear-gradient(120deg, #218838, #1e7e34);
+}
+
+.modal-buttons button:last-child {
+  background: linear-gradient(120deg, #dc3545, #c82333);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+}
+
+.modal-buttons button:last-child:hover {
+  background: linear-gradient(120deg, #c82333, #bd2130);
+}
+
+/* Mobile responsive modals */
+@media (max-width: 768px) {
+  .modal {
+    padding: 15px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 400px;
+    border-radius: 15px;
+  }
+
+  .modal-header {
+    padding: 20px 25px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .close {
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+  }
+
+  .modal-body {
+    padding: 30px 25px;
+  }
+
+  .modal-body p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .math-question {
+    padding: 25px;
+    margin: 20px 0;
+  }
+
+  .math-question span {
+    font-size: 2rem;
+  }
+
+  .math-input input {
+    padding: 15px 18px;
+    font-size: 18px;
+  }
+
+  .modal-buttons {
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .modal-buttons button {
+    padding: 12px 25px;
+    font-size: 13px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    padding: 18px 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .close {
+    width: 35px;
+    height: 35px;
+    font-size: 28px;
+  }
+
+  .modal-body {
+    padding: 25px 20px;
+  }
+
+  .modal-body p {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .math-question {
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .math-question span {
+    font-size: 1.8rem;
+  }
+
+  .math-options-container {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .math-option {
+    padding: 8px 12px;
+    font-size: 14px;
+    min-width: 45px;
+  }
+
+  .math-input input {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+
+  .modal-buttons {
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .modal-buttons button {
+    flex: 1;
+    max-width: 140px;
+    padding: 12px 15px;
+    font-size: 14px;
+    min-width: auto;
+  }
+}
+
+/* Loader styles */
+.loader {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader.active {
+  display: block;
+}
+
+/* Mobile responsive loader */
+@media (max-width: 480px) {
+  .loader {
+    width: 35px;
+    height: 35px;
+    border-width: 3px;
+    margin: 15px auto;
+  }
+}
+
+/* Confirmation modal styles */
+.confirmation-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.confirmation-content {
+  background: var(--base-color);
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--accent-color);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.confirmation-content h3 {
+  margin: 0 0 20px 0;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.confirmation-content p {
+  margin: 0 0 25px 0;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.confirmation-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 100px;
+  flex: 1;
+  max-width: 150px;
+}
+
+.confirmation-buttons button:first-child {
+  background: linear-gradient(120deg, #dc3545, #c82333);
+  color: white;
+}
+
+.confirmation-buttons button:first-child:hover {
+  background: linear-gradient(120deg, #c82333, #bd2130);
+}
+
+.confirmation-buttons button:last-child {
+  background: linear-gradient(120deg, #6c757d, #5a6268);
+  color: white;
+}
+
+.confirmation-buttons button:last-child:hover {
+  background: linear-gradient(120deg, #5a6268, #495057);
+}
+
+/* Success modal styles */
+.success-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.success-content {
+  background: var(--base-color);
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid #28a745;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.success-content h3 {
+  margin: 0 0 20px 0;
+  color: #28a745;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.success-content p {
+  margin: 0 0 25px 0;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: #28a745;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: successPulse 0.6s ease-in-out;
+}
+
+.success-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.success-buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 100px;
+  background: #28a745;
+  color: white;
+}
+
+.success-buttons button:hover {
+  background: #218838;
+}
+
+.success-buttons button:focus {
+  outline: none;
+  background: #218838;
+}
+
+/* Responsive design for confirmation and success modals */
+@media (max-width: 768px) {
+  .confirmation-modal,
+  .success-modal {
+    padding: 15px;
+  }
+
+  .confirmation-content,
+  .success-content {
+    padding: 25px;
+    max-width: 350px;
+  }
+
+  .confirmation-content h3,
+  .success-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .confirmation-content p,
+  .success-content p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .success-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .success-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .confirmation-buttons,
+  .success-buttons {
+    gap: 12px;
+  }
+
+  .confirmation-buttons button,
+  .success-buttons button {
+    padding: 10px 20px;
+    font-size: 13px;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation-modal,
+  .success-modal {
+    padding: 10px;
+  }
+
+  .confirmation-content,
+  .success-content {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .confirmation-content h3,
+  .success-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .confirmation-content p,
+  .success-content p {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .success-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+  }
+
+  .success-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .confirmation-buttons,
+  .success-buttons {
+    flex-direction: row !important;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .confirmation-buttons button,
+  .success-buttons button {
+    flex: 1 !important;
+    max-width: 140px !important;
+    width: auto !important;
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
